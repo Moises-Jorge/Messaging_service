@@ -8,6 +8,7 @@ public class MessagingServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MessagingServiceApplication.class, args);
+		System.out.println("\n\n==============\nTA SAIR FRUTA\n==============\n");
 	}
 
 }
