@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    xmlns:tns="http://www.classes.generated"
+    targetNamespace="http://www.classes.generated" 
+    elementFormDefault="qualified">
+
+    <!-- Criando os Elementos -->
+
+        <!-- PEDIDO de Registro de "Usuario" -->
+            <xsd:element name="registerUserRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="username" type="xsd:string"/>
+                        <xsd:element name="password" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        <!-- FIM do PEDIDO de Registro de "Usuarios" -->
+
+        <!-- RESPOSTA ao Registro de "Usuarios"-->
+            <xsd:element name="registerUserResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="status" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        <!-- FIM da RESPOSTA de Registro de "Usuarios"-->
+
+        <!-- PEDIDO de "Login"-->
+            <xsd:element name="loginUserRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="username" type="xsd:string"/>
+                        <xsd:element name="password" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        <!-- FIM do PEDIDO de "Login"-->
+
+        <!-- RESPOSTA ao "Login"-->
+            <xsd:element name="loginUserResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="status" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        <!-- FIM da RESPOSTA de "Login"-->
+
+        <!-- PEDIDO de "Envio de Mensagem"-->
+            <xsd:element name="sendMessageRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="from" type="xsd:string"/>
+                        <xsd:element name="to" type="xsd:string"/>
+                        <xsd:element name="message" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        <!-- FIM do PEDIDO de "Envio de Mensagem"-->
+
+        <!-- RESPOSTA ao "Envio de Mensagem"-->
+            <xsd:element name="sendMessageResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="status" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        <!-- FIM do RESPOSTA ao "Envio de Mensagem"-->
+
+        <!-- PEDIDO de "Recebimento de Mensagem"-->
+            <xsd:element name="receiveMessagesRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="username" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        <!-- FIM do PEDIDO de "Recebimento de Mensagem"-->
+
+        <!-- RESPOSTA ao "Recebimento de Mensagem"-->
+            <xsd:element name="receiveMessagesResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="messages" type="tns:messageList"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        <!-- FIM do RESPOSTA ao "Recebimento de Mensagem"-->
+
+        <!-- Criando a composicao das "Mensagens"-->
+            <xsd:complexType name="message">
+                <xsd:sequence>
+                    <xsd:element name="from" type="xsd:string"/>
+                    <xsd:element name="to" type="xsd:string"/>
+                    <xsd:element name="message" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        <!-- FIM da Criacao das "Mensagens"-->
+
+        <!-- Criando a "Lista de Mensagens"-->
+            <xsd:complexType name="messageList">
+                <xsd:sequence>
+                    <xsd:element name="message" type="tns:message" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        <!-- FIM da Criacao da "Lista de Mensagens"-->
+
+    <!-- FIM da criacao dos Elemetnos -->
+</xsd:schema>
