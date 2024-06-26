@@ -73,4 +73,17 @@ public class MessageList {
         return this.message;
     }
 
+    // EM CASO DE BUG, ANALISAR AQUI...
+    public void setFrom(String fromUser) {
+        this.message.forEach(m -> m.setFrom(fromUser));
+    }
+
+    public void setTo(String toUser) {
+        this.message.forEach(m -> m.setTo(toUser));
+    }
+
+    public void setMessage(String messageContent) {
+        this.message.forEach(m -> m.setMessage(messageContent));
+    }
+
 }

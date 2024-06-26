@@ -8,6 +8,8 @@
 
 package generated.classes;
 
+import java.util.List;
+
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
@@ -59,13 +61,13 @@ public class ReceiveMessagesResponse {
     /**
      * Sets the value of the messages property.
      * 
-     * @param value
+     * @param list
      *     allowed object is
      *     {@link MessageList }
      *     
      */
-    public void setMessages(MessageList value) {
-        this.messages = value;
+    public void setMessages(List<MessageList> list) { // EM CASO DE BUG, ANALISAR AQUI(JUNTAMENTE COM O BUG EM "MessageList")...
+        this.messages = (MessageList) list;
     }
 
 }
