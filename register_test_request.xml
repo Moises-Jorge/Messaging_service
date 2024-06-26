@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:messag="http://www.classes.generated">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <messag:registerUserRequest>
+         <messag:username>testuser</messag:username>
+         <messag:password>password</messag:password>
+      </messag:registerUserRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
